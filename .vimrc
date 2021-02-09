@@ -2,14 +2,19 @@ set backspace=indent,eol,start
 syntax on
 set hlsearch  " highlight while searching
 set autoindent
+set visualbell t_vb=  " Disable vim sound
 set smartindent
-set mouse=a  " Enable mouse in vim
+" set mouse=a  " Enable mouse in vim
 set nomagic  " To perform a non-regex search/replace in vim
 set expandtab  " In insert mode replace tabs to spaces
 set incsearch  " Start searching before pressing enter
 set tabstop=4  " Tab width in spaces
 set shiftwidth=4  " Tab width in spaces when << or >>
 set smarttab  " Remove tabs by backspace at the begning of the line (instead of multiple space removing)
+
+" all folds open when opening a file
+set foldmethod=indent
+set foldlevelstart=20
 
 " PEP8 column
 set colorcolumn=80
@@ -32,8 +37,8 @@ noremap <C-d> :sh<cr>
 " vim plug
 call plug#begin()
 Plug 'nvie/vim-flake8'
+Plug 'tmhedberg/simpylfold'
 Plug 'scrooloose/nerdtree'
-
 " Disables search highlighting when you are done searching
 Plug 'romainl/vim-cool'
 Plug 'vim-airline/vim-airline'
