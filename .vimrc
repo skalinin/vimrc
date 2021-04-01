@@ -31,9 +31,6 @@ nnoremap <silent> * :let @/= '\<' . expand('<cword>') . '\>' <bar> set hls <cr>
 " toggle NERDTree
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
 
-" to toggle between bash and vim quickly
-noremap <C-d> :sh<cr>
-
 " vim plug
 call plug#begin()
 Plug 'nvie/vim-flake8'
