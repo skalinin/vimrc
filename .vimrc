@@ -22,14 +22,30 @@ highlight ColorColumn ctermbg=238 guibg=lightgrey
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
-xnoremap p pgvy
+" search for visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " search and highlight but do not jump
 nnoremap <silent> * :let @/= '\<' . expand('<cword>') . '\>' <bar> set hls <cr>
 
+" make one register for ctrl+v and vim 'y', also don't yank when delete
+noremap y "*y
+noremap Y "*Y
+noremap p "*p
+noremap P "*P
+vnoremap y "*y
+vnoremap Y "*Y
+vnoremap p "*p
+vnoremap P "*P
+
 " toggle NERDTree
 nmap <silent> <leader><leader> :NERDTreeToggle<CR>
+
+" In insert or command mode, move normally by using Ctrl
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 
 " vim plug
 call plug#begin()
