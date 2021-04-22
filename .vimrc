@@ -19,8 +19,6 @@ set foldlevelstart=20
 " PEP8 column
 set colorcolumn=80
 highlight ColorColumn ctermbg=238 guibg=lightgrey
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
 
 " search for visually selected text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
@@ -52,6 +50,7 @@ call plug#begin()
 Plug 'nvie/vim-flake8'
 Plug 'tmhedberg/simpylfold'
 Plug 'scrooloose/nerdtree'
+Plug 'morhetz/gruvbox'
 " Disables search highlighting when you are done searching
 Plug 'romainl/vim-cool'
 Plug 'vim-airline/vim-airline'
