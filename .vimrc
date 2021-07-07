@@ -16,6 +16,9 @@ set smarttab  " Remove tabs by backspace at the begning of the line (instead of 
 set foldmethod=indent
 set foldlevelstart=20
 
+" copy and paste multiple times
+xnoremap p pgvy
+
 " PEP8 column
 set colorcolumn=80
 highlight ColorColumn ctermbg=238 guibg=lightgrey
@@ -27,17 +30,22 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 nnoremap <silent> * :let @/= '\<' . expand('<cword>') . '\>' <bar> set hls <cr>
 
 " make one register for ctrl+v and vim 'y', also don't yank when delete
-noremap y "*y
-noremap Y "*Y
-noremap p "*p
-noremap P "*P
-vnoremap y "*y
-vnoremap Y "*Y
-vnoremap p "*p
-vnoremap P "*P
+nnoremap d "_d
+vnoremap d "_d
+nnoremap c "_c
+vnoremap c "_c
+" noremap y "*y
+" noremap Y "*Y
+" noremap p "*p
+" noremap P "*P
+" vnoremap y "*y
+" vnoremap Y "*Y
+" vnoremap p "*p
+" vnoremap P "*P
 
 " toggle NERDTree
-nmap <silent> <leader><leader> :NERDTreeToggle<CR>
+nmap <silent> <leader><leader> :NERDTreeFind<CR>
+nmap <silent> <leader>f :NERDTreeToggle<CR>
 
 " In insert or command mode, move normally by using Ctrl
 inoremap <C-h> <Left>
