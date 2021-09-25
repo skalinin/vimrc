@@ -16,6 +16,10 @@ set smarttab  " Remove tabs by backspace at the begning of the line (instead of 
 set foldmethod=indent
 set foldlevelstart=20
 
+" not to insert two tabs after line break
+let g:pyindent_open_paren = 'shiftwidth()'
+let g:pyindent_continue = 'shiftwidth()'
+
 " copy and paste multiple times
 xnoremap p pgvy
 
