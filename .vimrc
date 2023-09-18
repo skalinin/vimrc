@@ -6,6 +6,8 @@ set smarttab
 set expandtab
 set smartindent
 
+set nomagic
+
 set colorcolumn=80
 highlight ColorColumn ctermbg=1
 
