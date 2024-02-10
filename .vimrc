@@ -5,6 +5,8 @@ set shiftwidth=4
 set smarttab
 set expandtab
 set smartindent
+filetype plugin indent on
+syntax enable
 
 set nomagic
 
