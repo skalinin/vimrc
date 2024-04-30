@@ -10,7 +10,7 @@ syntax enable
 
 set nomagic
 
-set colorcolumn=80
+set colorcolumn=120
 highlight ColorColumn ctermbg=1
 
 xnoremap p pgvy
