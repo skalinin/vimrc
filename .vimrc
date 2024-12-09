@@ -1,12 +1,12 @@
-set pastetoggle=<F3>
-
 set tabstop=4
 set shiftwidth=4
 set smarttab
 set expandtab
 set smartindent
-filetype plugin indent on
+
 syntax enable
+
+filetype plugin indent on
 
 set nomagic
 
@@ -21,6 +21,8 @@ set incsearch
 
 set wildmenu
 
+set cindent
+
 if &term =~ "screen"
     let &t_BE = "\e[?2004h"
     let &t_BD = "\e[?2004l"
@@ -28,14 +30,9 @@ if &term =~ "screen"
     exec "set t_PE=\e[201~"
 endif
 
-map <C-k> <C-w><Up>
-map <C-j> <C-w><Down>
-map <C-l> <C-w><Right>
-map <C-h> <C-w><Left>
+set ruler
 
 nnoremap <silent> * :let @/= '\<' . expand('<cword>') . '\>' <bar> set hls <cr>
-
-vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 if &diff
     hi DiffText cterm=none ctermfg=Black ctermbg=Red gui=none guifg=Black guibg=Red
@@ -43,3 +40,5 @@ if &diff
     hi DiffDelete ctermbg=4 ctermfg=Black
     hi DiffAdd cterm=none ctermfg=Black ctermbg=6 gui=none guifg=Black guibg=LightBlue
 endif
+
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
